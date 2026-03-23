@@ -1,4 +1,5 @@
 /* css */
+/* Global reset: removes default browser spacing so layout starts from a clean slate. */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Initial page background before later sections introduce their own surface colors. */
 body {
   background: #f5f5f5;
 }
@@ -23,6 +25,7 @@ body {
 }
 
 /* NAVBAR */
+/* The navbar is constrained to a desktop-friendly max width and centered in the header. */
 .navbar {
   width: 1440px;
   height: 80px;
@@ -91,6 +94,7 @@ body {
 }
 
 /* BUTTON */
+/* Primary call-to-action styling shared by the main nav button. */
 .btn-primary {
   background: #2f6bff;
   color: white;
@@ -107,6 +111,7 @@ body {
 }
 
 /* MOBILE MENU */
+/* Hidden mobile navigation drawer. It expands by changing `max-height` and padding. */
 .mobile-menu {
   position: absolute;
   top: 80px;
@@ -158,6 +163,7 @@ body {
 }
 
 /* HAMBURGER */
+/* The hamburger icon is hidden on desktop and revealed inside the mobile breakpoint. */
 .menu-toggle {
   display: none;
   width: 30px;
@@ -233,6 +239,7 @@ body {
 /* =========================
    HERO SECTION
 ========================= */
+/* The hero combines layered gradients plus orbit outlines for a high-energy crypto look. */
 .hero {
   position: relative;
   overflow: visible;
@@ -261,6 +268,7 @@ body {
 }
 
 .hero-container {
+  /* Two-column desktop layout: content left, visual card right. */
   position: relative;
   z-index: 2;
   max-width: 1280px;
@@ -273,6 +281,7 @@ body {
 }
 
 .hero-orbit {
+  /* Decorative ellipses only; they do not affect layout or interaction. */
   position: absolute;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50%;
@@ -302,6 +311,7 @@ body {
 }
 
 .hero-content {
+  /* Keeps headline text from stretching too wide on large screens. */
   max-width: 620px;
   padding-top: 16px;
 }
@@ -323,6 +333,7 @@ body {
 }
 
 .hero-form {
+  /* Email input and CTA sit in one row until the mobile breakpoint stacks them. */
   display: flex;
   gap: 10px;
   margin-top: 52px;
@@ -365,6 +376,7 @@ body {
 }
 
 .converter-card {
+  /* Glass-style panel created with transparency + blur. */
   width: 100%;
   min-height: 366px;
   border-radius: 22px;
@@ -393,6 +405,7 @@ body {
 }
 
 .converter-field {
+  /* Shared shell for amount, converted value, and date rows. */
   display: flex;
   align-items: center;
   height: 48px;
@@ -466,6 +479,7 @@ body {
 }
 
 .hero-coin {
+  /* The floating coins are absolutely positioned relative to `.hero-panel`. */
   position: absolute;
   z-index: 3;
   width: 116px;
@@ -486,6 +500,7 @@ body {
 
 @media (max-width: 1100px) {
   .hero-container {
+    /* Collapse to one column earlier than mobile for cleaner tablet spacing. */
     grid-template-columns: 1fr;
     gap: 42px;
     padding: 0 34px;
@@ -509,6 +524,7 @@ body {
 
 @media (max-width: 768px) {
   .hero {
+    /* Reduce visual complexity on smaller screens. */
     min-height: auto;
     padding: 44px 0 56px;
   }
@@ -596,12 +612,15 @@ body {
 }
 
 * {
+  /* Second reset block from a later styling pass.
+     It is redundant, but harmless because it repeats the same base reset idea. */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  /* This later body rule wins in the cascade and becomes the active page base style. */
   background: #0a0a0f;
   font-family:
     "Inter",
@@ -616,6 +635,7 @@ body {
 }
 
 .demo-space {
+  /* Utility/demo class kept from earlier experimentation. */
   flex: 1;
   display: flex;
   align-items: center;
@@ -626,17 +646,558 @@ body {
   font-size: 0.9rem;
 }
 
+/* =========================
+   FEATURES SHOWCASE SECTION
+========================= */
+/* Light blue section that separates product education from testimonials below. */
+.features-showcase-section {
+  padding: 78px 0 84px;
+  background: #cfd7ff;
+}
+
+.features-showcase-shell {
+  /* Shared content width wrapper, similar to other sections in the page. */
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.feature-highlight-grid {
+  /* Asymmetric top layout: left card is tall, right column contains two shorter cards. */
+  display: grid;
+  grid-template-columns: 1.02fr 1.2fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.feature-highlight-card {
+  /* Each colored feature frame is internally split into visual area + text area. */
+  display: grid;
+  grid-template-columns: minmax(150px, 0.9fr) minmax(0, 1fr);
+  gap: 24px;
+  border-radius: 20px;
+  padding: 16px 22px 20px;
+  overflow: hidden;
+}
+
+.feature-highlight-card-primary {
+  /* This card spans two rows to reproduce the taller left panel from the design. */
+  grid-row: 1 / span 2;
+  background: #091951;
+  color: #ffffff;
+}
+
+.feature-highlight-card-trading {
+  background: #f3de95;
+  color: #091951;
+}
+
+.feature-highlight-card-security {
+  background: #f395d9;
+  color: #ffffff;
+}
+
+.feature-visual {
+  /* White visual panel inside each feature card, used as the stage for screenshots. */
+  position: relative;
+  min-height: 236px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.86);
+  overflow: hidden;
+}
+
+.feature-visual-primary {
+  min-height: 300px;
+}
+
+.feature-visual-secondary {
+  min-height: 146px;
+}
+
+.feature-device-image {
+  /* Base phone image is anchored low so the overlaid modal can sit above it. */
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 72%;
+  max-width: 215px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+.feature-visual-primary .feature-device-image {
+  width: 90%;
+  max-width: 280px;
+  bottom: -28px;
+}
+
+.feature-overlay-image {
+  /* Overlay card/modal sits above the device image to create depth. */
+  position: absolute;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 24px rgba(10, 19, 60, 0.18));
+}
+
+.feature-overlay-image-primary {
+  top: 28px;
+  left: 50%;
+  width: 88%;
+  max-width: 274px;
+  transform: translateX(-50%);
+}
+
+.feature-overlay-image-trading {
+  top: 36px;
+  left: 50%;
+  width: 75%;
+  max-width: 210px;
+  transform: translateX(-22%);
+}
+
+.feature-overlay-image-security {
+  top: 26px;
+  left: 50%;
+  width: 66%;
+  max-width: 152px;
+  transform: translateX(-8%);
+}
+
+.feature-highlight-copy {
+  align-self: end;
+}
+
+.feature-highlight-copy h2 {
+  font-size: clamp(1.7rem, 2.7vw, 2.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+.feature-highlight-copy p {
+  margin-top: 16px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  max-width: 300px;
+}
+
+.feature-highlight-card-primary .feature-highlight-copy {
+  padding-right: 14px;
+}
+
+.features-steps-intro {
+  /* Centered section heading between the top feature cards and lower onboarding cards. */
+  margin: 88px auto 42px;
+  text-align: center;
+  max-width: 620px;
+}
+
+.features-steps-intro h2 {
+  font-size: clamp(2.3rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  color: #091951;
+}
+
+.features-steps-intro p {
+  margin-top: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(9, 25, 81, 0.72);
+}
+
+.features-steps-grid {
+  /* Three evenly sized onboarding cards on desktop. */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.feature-step-card {
+  /* White cards use border + shadow to stand out on the light section background. */
+  min-height: 414px;
+  padding: 34px 26px 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 20px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 18px 28px rgba(35, 45, 88, 0.05);
+}
+
+.feature-step-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.feature-step-card h3 {
+  margin-top: 26px;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #191919;
+}
+
+.feature-step-card p {
+  margin-top: 16px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #666666;
+}
+
+@media (max-width: 1100px) {
+  .feature-highlight-grid {
+    /* Stack the large top feature cards for tablet-sized layouts. */
+    grid-template-columns: 1fr;
+  }
+
+  .feature-highlight-card {
+    grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
+  }
+
+  .feature-highlight-card-primary {
+    grid-row: auto;
+  }
+
+  .features-steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-step-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-showcase-section {
+    /* Tighten spacing and switch to single-column cards for phones. */
+    padding: 56px 0 60px;
+  }
+
+  .features-showcase-shell {
+    padding: 0 16px;
+  }
+
+  .feature-highlight-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 18px;
+  }
+
+  .feature-highlight-copy p {
+    max-width: none;
+  }
+
+  .features-steps-intro {
+    margin: 64px auto 30px;
+  }
+
+  .features-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-step-card,
+  .feature-step-card:last-child {
+    max-width: none;
+    min-height: auto;
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-highlight-copy h2 {
+    font-size: 1.55rem;
+  }
+
+  .feature-step-card {
+    padding: 28px 20px 24px;
+  }
+
+  .feature-step-card h3 {
+    font-size: 1.45rem;
+  }
+
+  .feature-step-image {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+/* =========================
+   TESTIMONIALS SECTION
+========================= */
+/* Testimonials switch to a bright surface so the cards feel paper-like and readable. */
+.testimonials-section {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 56px;
+  background: #fcfcfc;
+}
+
+.testimonials-shell {
+  /* Standard centered wrapper that keeps the testimonial grid aligned with other sections. */
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Centered heading styled to match the bold Figma title */
+.testimonials-section h2 {
+  text-align: center;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: #050505;
+}
+
+/* Decorative orbit pattern placed on the left side of the section */
+.testimonials-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.pattern-curve {
+  position: absolute;
+  border: 1px solid rgba(185, 192, 205, 0.4);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+
+.pattern-curve-one {
+  width: 460px;
+  height: 180px;
+  top: 8px;
+  left: -235px;
+}
+
+.pattern-curve-two {
+  width: 500px;
+  height: 220px;
+  top: 44px;
+  left: -270px;
+}
+
+.pattern-curve-three {
+  width: 530px;
+  height: 260px;
+  top: 96px;
+  left: -296px;
+}
+
+.pattern-curve-four {
+  width: 565px;
+  height: 320px;
+  top: 150px;
+  left: -330px;
+}
+
+.pattern-curve-five {
+  width: 610px;
+  height: 390px;
+  top: 220px;
+  left: -358px;
+}
+
+/* Four testimonial columns recreate the staggered masonry look from the design */
+.testimonials-grid {
+  /* Four-column masonry-like layout built with columns of stacked cards. */
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+  align-items: start;
+}
+
+.testimonial-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.testimonial-column-offset {
+  padding-top: 2px;
+}
+
+.testimonial-column-mid {
+  padding-top: 14px;
+}
+
+.testimonial-column-offset-large {
+  padding-top: 2px;
+}
+
+/* Card styling keeps the subtle border, radius, and white surface from the mockup */
+.testimonial-card {
+  /* Subtle border and shadow keep each quote readable without heavy decoration. */
+  padding: 14px 16px 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 14px rgba(24, 39, 75, 0.03);
+}
+
+.testimonial-card-tall {
+  min-height: 176px;
+}
+
+.testimonial-card-faded {
+  opacity: 0.36;
+}
+
+.testimonial-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* CSS-only avatar circles replace the illustrated faces from the screenshot */
+.testimonial-avatar {
+  /* Simple CSS avatars stand in for real profile images. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.avatar-silver {
+  background: linear-gradient(135deg, #d7d7d7 0%, #9f9f9f 100%);
+}
+
+.avatar-amber {
+  background: linear-gradient(135deg, #f4ba63 0%, #8c5c1f 100%);
+}
+
+.avatar-sage {
+  background: linear-gradient(135deg, #d8e7d1 0%, #8ca88e 100%);
+}
+
+.avatar-violet {
+  background: linear-gradient(135deg, #d5c5ff 0%, #7a60cc 100%);
+}
+
+.avatar-green {
+  background: linear-gradient(135deg, #c9f1cc 0%, #5f9361 100%);
+}
+
+.avatar-indigo {
+  background: linear-gradient(135deg, #c9c6e8 0%, #6a6898 100%);
+}
+
+.avatar-stone {
+  background: linear-gradient(135deg, #e2d2c9 0%, #83736a 100%);
+}
+
+.avatar-sky {
+  background: linear-gradient(135deg, #d5f2ff 0%, #6fb7d8 100%);
+}
+
+.avatar-lilac {
+  background: linear-gradient(135deg, #e3dcff 0%, #aa9dd8 100%);
+}
+
+.avatar-plum {
+  background: linear-gradient(135deg, #d7bdf3 0%, #79539e 100%);
+}
+
+.avatar-cyan {
+  background: linear-gradient(135deg, #d7f1ff 0%, #6caecc 100%);
+}
+
+.avatar-blue {
+  background: linear-gradient(135deg, #cfe2f8 0%, #5c7f9c 100%);
+}
+
+.testimonial-meta h3 {
+  font-size: 0.95rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #343434;
+}
+
+.testimonial-meta p {
+  margin-top: 4px;
+  font-size: 0.79rem;
+  line-height: 1.2;
+  color: #b0b0b0;
+}
+
+.testimonial-copy {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: #5b5b5b;
+}
+
+@media (max-width: 1100px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-column-mid,
+  .testimonial-column-offset,
+  .testimonial-column-offset-large {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .testimonials-section {
+    /* Reduce outer spacing and collapse to one column on smaller phones. */
+    padding: 56px 0 40px;
+  }
+
+  .testimonials-shell {
+    padding: 0 16px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .testimonial-column {
+    gap: 14px;
+  }
+
+  .pattern-curve-one,
+  .pattern-curve-two,
+  .pattern-curve-three,
+  .pattern-curve-four,
+  .pattern-curve-five {
+    opacity: 0.45;
+  }
+
+  .testimonial-copy {
+    font-size: 0.9rem;
+  }
+}
 
 
 /* =========================
    PROMO SECTION
 ========================= */
+/* Short CTA strip placed after testimonials to nudge conversion. */
 .crypto-promo-section {
   padding: 36px 0 44px;
   background: #ffffff;
 }
 
 .crypto-promo-card {
+  /* Blue banner card with floating decorative elements and coins. */
   position: relative;
   overflow: visible;
   max-width: 930px;
@@ -675,6 +1236,7 @@ body {
 }
 
 .promo-coins {
+  /* Coins are taken out of document flow so they can float around the banner. */
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -803,12 +1365,14 @@ body {
 /* =========================
    FOOTER SECTION
 ========================= */
+/* Footer returns to a bold blue treatment to close the page strongly. */
 .crypto-footer-section {
   padding: 28px 24px 42px;
   background: #f7f7f8;
 }
 
 .crypto-footer {
+  /* Rounded container that holds links plus the final brand statement. */
   position: relative;
   overflow: hidden;
   max-width: 930px;
@@ -851,6 +1415,7 @@ body {
 }
 
 .footer-links-grid {
+  /* Desktop footer uses five columns, then reduces at smaller breakpoints. */
   position: relative;
   z-index: 1;
   display: grid;
@@ -940,6 +1505,7 @@ body {
 
 @media (max-width: 640px) {
   .crypto-footer-section {
+    /* Mobile footer gets smaller padding and simpler spacing. */
     padding: 20px 14px 30px;
   }
 

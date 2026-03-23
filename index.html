@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic page metadata and the single stylesheet used by the landing page -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CryptoZ Navbar</title>
@@ -9,6 +10,7 @@
 
   <body>
     <header class="header">
+      <!-- Main desktop navigation bar -->
       <nav class="navbar">
         <!-- LEFT SIDE -->
         <div class="nav-left">
@@ -44,6 +46,7 @@
       </nav>
 
       <!-- MOBILE MENU -->
+      <!-- This panel stays collapsed until JavaScript adds the `active` class -->
       <div class="mobile-menu" id="mobile-menu">
         <a href="#">Products</a>
         <a href="#">Price</a>
@@ -52,7 +55,9 @@
       </div>
     </header>
     <main>
+      <!-- Hero section: headline on the left, converter card on the right -->
       <section class="hero">
+        <!-- Decorative orbit rings used to create motion and depth in the background -->
         <div class="hero-orbit orbit-one"></div>
         <div class="hero-orbit orbit-two"></div>
         <div class="hero-orbit orbit-three"></div>
@@ -73,12 +78,14 @@
             </p>
 
             <form class="hero-form">
+              <!-- Email field and CTA are laid out side by side on desktop -->
               <input type="email" placeholder="Email Address...." />
               <button type="submit">Get started</button>
             </form>
           </article>
 
           <article class="hero-panel">
+            <!-- Floating coin illustrations placed around the converter card -->
             <img
               src="./assets/coin/bitCoin/Cam2.png"
               class="hero-coin hero-coin-top"
@@ -94,8 +101,10 @@
               <h2>Currency Converter</h2>
 
               <div class="converter-group">
+                <!-- One converter row = label + field shell -->
                 <label for="amount-value">Amount</label>
                 <div class="converter-field">
+                  <!-- Left side of the field acts like a compact currency selector -->
                   <div class="currency-chip">
                     <img src="./assets/images/Frame 8764.png" alt="GBP flag" />
                     <span>GBP</span>
@@ -118,6 +127,7 @@
               </div>
 
               <div class="converter-group">
+                <!-- Date row adds previous/next buttons and a calendar icon -->
                 <label for="date-value">Date</label>
                 <div class="converter-field converter-date">
                   <button class="date-nav" type="button">&#8249;</button>
@@ -137,8 +147,347 @@
         </div>
       </section>
 
+      <!-- Product feature showcase inserted above the testimonials section -->
+      <section class="features-showcase-section" aria-labelledby="features-showcase-title">
+        <div class="features-showcase-shell">
+          <!-- Top grid: one tall feature card on the left, two stacked cards on the right -->
+          <div class="feature-highlight-grid">
+            <article class="feature-highlight-card feature-highlight-card-primary">
+              <div class="feature-visual feature-visual-primary">
+                <!-- Each top card uses a phone screenshot plus an overlapping modal/card image -->
+                <img
+                  src="./assets/images/Group 11.png"
+                  alt="Portfolio dashboard preview on mobile"
+                  class="feature-device-image"
+                />
+                <img
+                  src="./assets/images/Group 8751.png"
+                  alt="Portfolio balance modal preview"
+                  class="feature-overlay-image feature-overlay-image-primary"
+                />
+              </div>
+
+              <div class="feature-highlight-copy">
+                <h2>Create portfolio today</h2>
+                <p>
+                  Buy and sell popular digital currencies, keep track of them in one
+                  place, and explore a variety of features that make trading feel
+                  simple from day one.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-highlight-card feature-highlight-card-trading">
+              <div class="feature-visual feature-visual-secondary">
+                <img
+                  src="./assets/images/iphone-12--black@2x.png"
+                  alt="Trading screen on mobile"
+                  class="feature-device-image"
+                />
+                <img
+                  src="./assets/images/Group 8750.png"
+                  alt="Trade order modal preview"
+                  class="feature-overlay-image feature-overlay-image-trading"
+                />
+              </div>
+
+              <div class="feature-highlight-copy">
+                <h2>Lightning-Fast Crypto Trading</h2>
+                <p>
+                  The exchange supports USD, EUR, and GBP. Invest in cryptocurrency
+                  easily over time by scheduling buys daily, weekly, or monthly.
+                </p>
+              </div>
+            </article>
+
+            <article class="feature-highlight-card feature-highlight-card-security">
+              <div class="feature-visual feature-visual-secondary">
+                <img
+                  src="./assets/images/iphone-12--black.png"
+                  alt="Account security screen on mobile"
+                  class="feature-device-image"
+                />
+                <img
+                  src="./assets/images/Group 5348.png"
+                  alt="Identity verification modal preview"
+                  class="feature-overlay-image feature-overlay-image-security"
+                />
+              </div>
+
+              <div class="feature-highlight-copy">
+                <h2>Security From Day One</h2>
+                <p>
+                  Safely search and compare, buy and sell popular digital currencies,
+                  and track them all in one place with a more secure setup.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Intro heading for the three simple onboarding steps below -->
+          <div class="features-steps-intro">
+            <h2 id="features-showcase-title">Get Started in Just Few Minute</h2>
+            <p>
+              Has a variety of features that make it the best place to start trading
+            </p>
+          </div>
+
+          <!-- Lower grid: three clean cards that explain the onboarding flow -->
+          <div class="features-steps-grid">
+            <article class="feature-step-card">
+              <img
+                src="./assets/images/Frame 219.png"
+                alt="Sign up illustration"
+                class="feature-step-image"
+              />
+              <h3>Sign Up</h3>
+              <p>
+                Buy Bitcoin or Ethereum, then securely store it in your wallet or
+                send it on easily to friends.
+              </p>
+            </article>
+
+            <article class="feature-step-card">
+              <img
+                src="./assets/images/Frame 220.png"
+                alt="Fund wallet illustration"
+                class="feature-step-image"
+              />
+              <h3>Fund</h3>
+              <p>
+                Choose your preferred payment method such as bank transfer or credit
+                card to top up your wallet.
+              </p>
+            </article>
+
+            <article class="feature-step-card">
+              <img
+                src="./assets/images/Frame 221.png"
+                alt="Buy crypto illustration"
+                class="feature-step-image"
+              />
+              <h3>Buy Crypto</h3>
+              <p>
+                Sign up for free wallet on web, iOS or Android and follow our easy
+                process to set up your profile.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section class="testimonials-section" aria-labelledby="testimonials-title">
+        <!-- Decorative curved lines that sit behind the content -->
+        <div class="testimonials-pattern" aria-hidden="true">
+          <span class="pattern-curve pattern-curve-one"></span>
+          <span class="pattern-curve pattern-curve-two"></span>
+          <span class="pattern-curve pattern-curve-three"></span>
+          <span class="pattern-curve pattern-curve-four"></span>
+          <span class="pattern-curve pattern-curve-five"></span>
+        </div>
+
+        <div class="testimonials-shell">
+          <!-- Section heading -->
+          <h2 id="testimonials-title">What people are saying</h2>
+
+          <!-- Staggered four-column layout to match the Figma arrangement -->
+          <div class="testimonials-grid">
+            <div class="testimonial-column">
+              <!-- Cards use repeated structure: identity block first, testimonial copy second -->
+              <article class="testimonial-card testimonial-card-tall">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-silver">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.”
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-amber">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+                </p>
+              </article>
+
+              <article class="testimonial-card testimonial-card-faded">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-sage">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud.”
+                </p>
+              </article>
+            </div>
+
+            <div class="testimonial-column testimonial-column-offset">
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-violet">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut dolore magna aliqua.”
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-green">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-indigo">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
+                </p>
+              </article>
+            </div>
+
+            <div class="testimonial-column testimonial-column-mid">
+              <article class="testimonial-card testimonial-card-tall">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-stone">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.”Lorem ipsum
+                  dolor sit amet, consectetur adipiscing elit,
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-sky">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
+                </p>
+              </article>
+
+              <article class="testimonial-card testimonial-card-faded">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-lilac">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore”
+                </p>
+              </article>
+            </div>
+
+            <div class="testimonial-column testimonial-column-offset-large">
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-plum">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-cyan">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
+                </p>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-meta">
+                  <span class="testimonial-avatar avatar-blue">JD</span>
+                  <div>
+                    <h3>John doe</h3>
+                    <p>CEO Motion Design Agency</p>
+                  </div>
+                </div>
+                <p class="testimonial-copy">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="crypto-promo-section">
         <div class="crypto-promo-card">
+          <!-- Decorative background details to avoid a flat banner -->
           <div class="promo-curve promo-curve-left"></div>
           <div class="promo-curve promo-curve-center"></div>
           <div class="promo-dots"></div>
@@ -153,6 +502,7 @@
           </div>
 
           <div class="promo-coins">
+            <!-- Coin art is absolutely positioned so it can float around the CTA card -->
             <img
               src="./assets/images/btc.png"
               class="promo-coin promo-coin-btc"
@@ -174,10 +524,12 @@
     </main>
     <footer class="crypto-footer-section">
       <div class="crypto-footer">
+        <!-- Large ring shapes in the background echo the hero section styling -->
         <div class="footer-orbit footer-orbit-one"></div>
         <div class="footer-orbit footer-orbit-two"></div>
         <div class="footer-orbit footer-orbit-three"></div>
 
+        <!-- Multi-column footer navigation -->
         <div class="footer-links-grid">
           <div class="footer-column">
             <h3>Company</h3>
@@ -230,6 +582,7 @@
 
         <div class="footer-divider"></div>
 
+        <!-- Footer closeout: marketing line, brand, and copyright -->
         <div class="footer-bottom-content">
           <p>Did you know you can do more with crypto while on the go?</p>
 
@@ -243,6 +596,7 @@
       </div>
     </footer>
 
+    <!-- All page interactions are handled in this small script file -->
     <script src="script.js"></script>
   </body>
 </html>
