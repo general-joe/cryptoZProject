@@ -625,3 +625,350 @@ body {
   text-align: center;
   font-size: 0.9rem;
 }
+
+
+
+/* =========================
+   PROMO SECTION
+========================= */
+.crypto-promo-section {
+  padding: 36px 0 44px;
+  background: #ffffff;
+}
+
+.crypto-promo-card {
+  position: relative;
+  overflow: visible;
+  max-width: 930px;
+  min-height: 123px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #3658e5 0%, #3a61ea 54%, #5e92ff 100%);
+}
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  max-width: 250px;
+}
+
+.promo-content h2 {
+  font-size: 1.18rem;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.promo-content button {
+  width: 62px;
+  height: 27px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1b2b67;
+  font-size: 0.47rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.promo-coins {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.promo-coin {
+  position: absolute;
+  z-index: 3;
+  object-fit: contain;
+}
+
+.promo-coin-btc {
+  width: 109px;
+  height: 109px;
+  top: -26px;
+  right: 18px;
+}
+
+.promo-coin-bnb {
+  width: 58px;
+  height: 58px;
+  right: 76px;
+  bottom: 12px;
+}
+
+.promo-coin-eth {
+  width: 58px;
+  height: 58px;
+  right: 16px;
+  bottom: 18px;
+}
+
+.promo-curve,
+.promo-dots {
+  position: absolute;
+  pointer-events: none;
+}
+
+.promo-curve {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.promo-curve-left {
+  width: 290px;
+  height: 160px;
+  left: -130px;
+  top: -8px;
+}
+
+.promo-curve-center {
+  width: 215px;
+  height: 215px;
+  right: 74px;
+  top: -12px;
+}
+
+.promo-dots {
+  width: 86px;
+  height: 50px;
+  right: 28px;
+  bottom: 18px;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.32) 1px,
+    transparent 1px
+  );
+  background-size: 8px 8px;
+}
+
+@media (max-width: 560px) {
+  .crypto-promo-section {
+    padding: 28px 16px 36px;
+  }
+
+  .crypto-promo-card {
+    max-width: 100%;
+    min-height: 180px;
+    padding: 24px 20px 20px;
+  }
+
+  .promo-content {
+    max-width: 210px;
+  }
+
+  .promo-content h2 {
+    font-size: 1rem;
+  }
+
+  .promo-coin-btc {
+    width: 82px;
+    height: 82px;
+    top: -20px;
+    right: 6px;
+  }
+
+  .promo-coin-bnb,
+  .promo-coin-eth {
+    width: 48px;
+    height: 48px;
+    bottom: 20px;
+  }
+
+  .promo-coin-bnb {
+    right: 66px;
+  }
+
+  .promo-coin-eth {
+    right: 14px;
+  }
+
+  .promo-curve-center {
+    right: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   FOOTER SECTION
+========================= */
+.crypto-footer-section {
+  padding: 28px 24px 42px;
+  background: #f7f7f8;
+}
+
+.crypto-footer {
+  position: relative;
+  overflow: hidden;
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 58px 48px 54px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #3455de 0%, #3353dd 100%);
+  box-shadow: 0 10px 30px rgba(34, 58, 155, 0.08);
+}
+
+.footer-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.footer-orbit-one {
+  width: 920px;
+  height: 340px;
+  top: 36px;
+  left: 120px;
+  transform: rotate(-10deg);
+}
+
+.footer-orbit-two {
+  width: 980px;
+  height: 460px;
+  bottom: -150px;
+  left: 58px;
+  transform: rotate(-16deg);
+}
+
+.footer-orbit-three {
+  width: 800px;
+  height: 300px;
+  top: -110px;
+  left: -60px;
+  transform: rotate(-8deg);
+}
+
+.footer-links-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-column h3 {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-column a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.footer-divider {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 1px;
+  margin: 42px 0 30px;
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.footer-bottom-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-bottom-content p {
+  font-size: clamp(1.7rem, 2.2vw, 2.1rem);
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.footer-brand img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.footer-brand span {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.footer-bottom-content small {
+  display: block;
+  margin-top: 24px;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 920px) {
+  .crypto-footer {
+    padding: 44px 28px 40px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .crypto-footer-section {
+    padding: 20px 14px 30px;
+  }
+
+  .crypto-footer {
+    padding: 34px 20px 34px;
+    border-radius: 16px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+
+  .footer-divider {
+    margin: 32px 0 24px;
+  }
+
+  .footer-bottom-content p {
+    font-size: 1.4rem;
+  }
+
+  .footer-brand span {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
