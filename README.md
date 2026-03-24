@@ -1,101 +1,94 @@
-CryptoZ – Cryptocurrency Landing Page
+# CryptoZ Landing Page
 
-CryptoZ is a modern and fully responsive cryptocurrency landing page that includes a real-time currency converter powered by a cryptocurrency API.
+CryptoZ is a fully responsive cryptocurrency landing page built with HTML, CSS, and JavaScript. The project includes a live currency converter in the hero section, branded marketing sections, responsive layouts, and supporting documentation for API usage and testing.
 
-This project demonstrates frontend development skills including HTML structure, responsive CSS layouts, JavaScript functionality, and API integration.
+## Project Summary
 
- Project Overview
+This project was built to satisfy the following goals:
 
-CryptoZ provides users with a visually appealing cryptocurrency landing page where they can:
+- create a modern cryptocurrency landing page
+- integrate a real-time currency converter using a public API
+- make the website responsive across desktop, tablet, and mobile screen sizes
+- keep the code organized, commented, and easy to learn from
 
-View a modern crypto-themed interface
+## Features
 
-Convert cryptocurrency values in real time
+- semantic HTML5 structure
+- responsive layouts using CSS Grid, Flexbox, and media queries
+- real-time crypto-to-fiat conversion in the hero section
+- error handling and loading states for failed API requests
+- interactive mobile navigation menu
+- section-by-section comments in the source code for learning purposes
 
-Experience a fully responsive design across all devices
+## Tech Stack
 
-The currency converter fetches live cryptocurrency exchange data from a public API and dynamically updates results based on user input.
+- `HTML5`
+- `CSS3`
+- `JavaScript (ES6+)`
+- `CoinGecko Simple Price API`
 
- Project Objectives
+## Live Converter
 
-The main goals of this project are:
+The converter currently supports these source cryptocurrencies:
 
-Build a professional cryptocurrency landing page
+- Bitcoin (`BTC`)
+- Ethereum (`ETH`)
+- Solana (`SOL`)
+- Binance Coin (`BNB`)
+- Cardano (`ADA`)
+- Dogecoin (`DOGE`)
 
-Implement a real-time currency converter using an API
+It converts them into these target currencies:
 
-Ensure the website is fully responsive across mobile, tablet, and desktop devices
+- `USD`
+- `EUR`
+- `GBP`
+- `AUD`
+- `CAD`
+- `NGN`
 
-Apply modern HTML, CSS, and JavaScript best practices
+## Project Structure
 
- Technologies Used
-
-HTML5 – Semantic structure
-
-CSS3 – Styling and responsive design
-
-JavaScript (ES6) – Dynamic functionality
-
-Flexbox & Grid – Responsive layouts
-
-Cryptocurrency API – Real-time exchange rates
-
-📁 Project Structure
-cryptoz-project/
-│
-├── index.html
-├── style.css
-├── script.js
-│
+```text
+cryptoZProject/
 ├── assets/
-│   ├── images/
-│   └── icons/
-│
 ├── docs/
 │   ├── API_DOCUMENTATION.md
 │   └── TESTING_REPORT.md
-│
+├── index.html
+├── style.css
+├── script.js
 └── README.md
- Features
+```
 
-Real-time cryptocurrency converter
+## How To Run
 
-Modern landing page design
+1. Clone or download the project.
+2. Open `index.html` in a browser.
+3. Make sure you have internet access so the live currency converter can fetch exchange rates.
 
-Fully responsive layout
+No build step or package installation is required.
 
-API integration for live data
+## Notes About The API
 
-Error handling for API requests
+The converter uses CoinGecko's `simple/price` endpoint to fetch live market prices.
 
- Currency Converter
+Reference:
 
-The converter allows users to:
+- [CoinGecko Simple Price API](https://docs.coingecko.com/v3.0.1/reference/simple-price)
 
-Enter a cryptocurrency amount
+If CoinGecko changes its public access or rate-limits your requests, you may need to update the implementation to use a demo or API key.
 
-Select the desired currency
+## Deliverables Included
 
-View the real-time converted value instantly
+- source code: `index.html`, `style.css`, `script.js`
+- API notes: [docs/API_DOCUMENTATION.md](/d:/allMyProject_Current/cryptoZProject/docs/API_DOCUMENTATION.md)
+- testing notes: [docs/TESTING_REPORT.md](/d:/allMyProject_Current/cryptoZProject/docs/TESTING_REPORT.md)
 
-The converter fetches exchange rate data from a cryptocurrency API.
+## What To Review
 
- Responsiveness
+If you are reviewing this project against the brief, the most relevant areas are:
 
-The website adapts to multiple screen sizes including:
-
-Desktop
-
-Laptop
-
-Tablet
-
-Mobile devices
-
-Responsive techniques used:
-
-CSS Flexbox
-
-CSS Grid
-
-Media queries
+- `index.html` for semantic page structure
+- `style.css` for responsive layouts and visual design
+- `script.js` for API integration, error handling, and dynamic UI updates

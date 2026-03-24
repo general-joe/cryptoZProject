@@ -101,16 +101,28 @@
               <h2>Currency Converter</h2>
 
               <div class="converter-group">
-                <!-- One converter row = label + field shell -->
                 <label for="amount-value">Amount</label>
                 <div class="converter-field">
-                  <!-- Left side of the field acts like a compact currency selector -->
                   <div class="currency-chip">
                     <img src="./assets/images/Frame 8764.png" alt="GBP flag" />
-                    <span>GBP</span>
+                    <span id="from-currency-label">GBP</span>
+                    <select id="from-currency" aria-label="Select source currency">
+                      <option value="GBP" selected>GBP</option>
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="AUD">AUD</option>
+                      <option value="CAD">CAD</option>
+                    </select>
                     <span class="currency-arrow">&#709;</span>
                   </div>
-                  <input id="amount-value" type="text" value="0.0088" />
+                  <input
+                    id="amount-value"
+                    type="number"
+                    min="0"
+                    step="any"
+                    value="0.0088"
+                    inputmode="decimal"
+                  />
                 </div>
               </div>
 
@@ -119,31 +131,79 @@
                 <div class="converter-field">
                   <div class="currency-chip">
                     <img src="./assets/images/Frame 8769.png" alt="AUD flag" />
-                    <span>AUD</span>
+                    <span id="to-currency-label">AUD</span>
+                    <select id="to-currency" aria-label="Select target currency">
+                      <option value="AUD" selected>AUD</option>
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                      <option value="CAD">CAD</option>
+                    </select>
                     <span class="currency-arrow">&#709;</span>
                   </div>
-                  <input id="converted-value" type="text" value="0.0088" />
+                  <input id="converted-value" type="text" value="Loading..." readonly />
                 </div>
               </div>
 
               <div class="converter-group">
-                <!-- Date row adds previous/next buttons and a calendar icon -->
                 <label for="date-value">Date</label>
                 <div class="converter-field converter-date">
-                  <button class="date-nav" type="button">&#8249;</button>
-                  <input id="date-value" type="text" value="01 may 2024" />
-                  <button class="date-nav" type="button">&#8250;</button>
-                  <span class="calendar-icon">&#128197;</span>
+                  <button class="date-nav" id="target-prev" type="button" aria-label="Select previous target currency">
+                    &#8249;
+                  </button>
+                  <input id="date-value" type="text" value="Loading..." readonly />
+                  <button class="date-nav" id="target-next" type="button" aria-label="Select next target currency">
+                    &#8250;
+                  </button>
+                  <button class="converter-refresh" id="refresh-rate" type="button" aria-label="Refresh exchange rate">
+                    &#8635;
+                  </button>
                 </div>
               </div>
 
-              <div class="converter-rates">
-                <span>EUR</span>
-                <span>GBP</span>
-                <span>BTC</span>
+              <div class="converter-rates" aria-label="Quick reference currencies">
+                <span class="converter-rate-option" data-currency="EUR">EUR</span>
+                <span class="converter-rate-option" data-currency="GBP">GBP</span>
+                <span class="converter-rate-option" data-currency="AUD">AUD</span>
               </div>
+
+              <p class="converter-status-text" id="converter-status-text" aria-live="polite">
+                Preparing converter...
+              </p>
             </div>
           </article>
+        </div>
+      </section>
+
+      <!-- Brand proof section: trusted exchange logos and three key growth stats -->
+      <section class="brand-proof-section" aria-labelledby="brand-proof-title">
+        <div class="brand-proof-shell">
+          <!-- Top row of muted partner names mirrors the lightweight logo strip in the design -->
+          <div class="brand-proof-logos" aria-label="Featured crypto platforms">
+            <span class="brand-logo brand-logo-binance">BINANCE</span>
+            <span class="brand-logo">coinbase</span>
+            <span class="brand-logo">@bitcoin</span>
+            <span class="brand-logo">tether</span>
+            <span class="brand-logo">BitMEX</span>
+          </div>
+
+          <!-- Stats card uses three equal columns separated by thin vertical dividers -->
+          <div class="brand-proof-stats" role="group" aria-labelledby="brand-proof-title">
+            <article class="brand-proof-stat">
+              <h2 id="brand-proof-title">99K</h2>
+              <p>People have joined</p>
+            </article>
+
+            <article class="brand-proof-stat">
+              <h2>50K</h2>
+              <p>VVIP users have joined</p>
+            </article>
+
+            <article class="brand-proof-stat">
+              <h2>100+</h2>
+              <p>Big Companies have joined</p>
+            </article>
+          </div>
         </div>
       </section>
 

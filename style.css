@@ -415,6 +415,7 @@ body {
 }
 
 .currency-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -447,17 +448,27 @@ body {
   font-size: 0.95rem;
 }
 
+.currency-chip select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  appearance: none;
+  cursor: pointer;
+}
+
 .converter-date input {
   text-transform: lowercase;
 }
 
 .date-nav,
-.calendar-icon {
+.converter-refresh {
   flex-shrink: 0;
   color: #3f4968;
 }
 
-.date-nav {
+.date-nav,
+.converter-refresh {
   border: none;
   background: transparent;
   font-size: 1.3rem;
@@ -465,9 +476,10 @@ body {
   cursor: pointer;
 }
 
-.calendar-icon {
-  font-size: 1rem;
+.converter-refresh {
+  width: 24px;
   margin-left: 10px;
+  font-size: 1.05rem;
 }
 
 .converter-rates {
@@ -476,6 +488,22 @@ body {
   margin-top: 20px;
   color: #eef3ff;
   font-size: 1rem;
+}
+
+.converter-rate-option {
+  cursor: pointer;
+}
+
+.converter-rate-option.is-active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.converter-status-text {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: rgba(238, 243, 255, 0.88);
 }
 
 .hero-coin {
@@ -609,6 +637,10 @@ body {
     gap: 6px;
     font-size: 0.88rem;
   }
+
+  .converter-date {
+    padding-right: 8px;
+  }
 }
 
 * {
@@ -632,6 +664,7 @@ body {
     sans-serif;
 
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .demo-space {
@@ -644,6 +677,167 @@ body {
   padding: 2rem;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* =========================
+   BRAND PROOF SECTION
+========================= */
+/* Intro proof strip that shows recognizable names first, then follows with platform growth stats. */
+.brand-proof-section {
+  padding: 24px 0 18px;
+  background: #ffffff;
+}
+
+.brand-proof-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
+.brand-proof-logos {
+  /* The logo row is intentionally light and quiet so the stats card remains the focal point. */
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+  min-height: 82px;
+  padding: 24px 0;
+}
+
+.brand-logo {
+  justify-self: center;
+  font-size: 1.9rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #b7b7b7;
+  opacity: 0.92;
+}
+
+.brand-logo-binance {
+  letter-spacing: 0.16em;
+  font-size: 1.18rem;
+}
+
+.brand-proof-stats {
+  /* This card matches the screenshot: white surface, light border, rounded corners, generous inner spacing. */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  max-width: 1200px;
+  margin: 18px auto 0;
+  padding: 32px 100px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.brand-proof-stat {
+  position: relative;
+  text-align: center;
+}
+
+.brand-proof-stat:not(:first-child)::before {
+  /* Vertical separators recreate the split columns seen in the mockup. */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 44px;
+  background: #e3e3e3;
+  transform: translateY(-50%);
+}
+
+.brand-proof-stat h2 {
+  font-size: clamp(2.4rem, 3.2vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 500;
+  color: #091951;
+}
+
+.brand-proof-stat p {
+  margin-top: 10px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #7f8497;
+}
+
+@media (max-width: 1100px) {
+  .brand-proof-shell {
+    padding: 0 40px;
+  }
+
+  .brand-proof-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 18px;
+    min-height: auto;
+  }
+
+  .brand-proof-stats {
+    padding: 28px 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-proof-section {
+    padding: 18px 0 10px;
+  }
+
+  .brand-proof-shell {
+    padding: 0 20px;
+  }
+
+  .brand-proof-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 14px;
+    padding: 16px 0 20px;
+  }
+
+  .brand-logo {
+    font-size: 1.4rem;
+  }
+
+  .brand-logo-binance {
+    font-size: 0.98rem;
+  }
+
+  .brand-proof-stats {
+    grid-template-columns: 1fr;
+    margin-top: 8px;
+    padding: 18px 20px;
+  }
+
+  .brand-proof-stat {
+    padding: 18px 0;
+  }
+
+  .brand-proof-stat:not(:first-child)::before {
+    left: 50%;
+    top: 0;
+    width: 56px;
+    height: 1px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-proof-logos {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-logo {
+    font-size: 1.22rem;
+  }
+
+  .brand-proof-stat h2 {
+    font-size: 2rem;
+  }
+
+  .brand-proof-stat p {
+    font-size: 0.88rem;
+  }
 }
 
 /* =========================
