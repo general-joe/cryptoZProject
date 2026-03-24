@@ -647,6 +647,235 @@ body {
 }
 
 /* =========================
+   TRUST SECTION
+========================= */
+/* Two-panel trust section: clean text block on the left and floating app collage on the right. */
+.trust-section {
+  background: #ffffff;
+}
+
+.trust-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 665px) minmax(0, 775px);
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 806px;
+}
+
+.trust-copy-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 96px 88px 96px 120px;
+  background: #ffffff;
+}
+
+.trust-copy-frame h2 {
+  max-width: 488px;
+  font-size: clamp(2.9rem, 4vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  color: #091951;
+}
+
+.trust-points {
+  display: grid;
+  gap: 0;
+  max-width: 488px;
+  margin-top: 48px;
+}
+
+.trust-point {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 24px;
+  padding: 26px 0;
+  border-top: 1px solid #edf0f5;
+}
+
+.trust-point:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.trust-point-number {
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 600;
+  color: #d7defd;
+}
+
+.trust-point-copy h3 {
+  font-size: 1.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #091951;
+}
+
+.trust-point-copy p {
+  margin-top: 12px;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #6f7691;
+}
+
+.trust-visual-frame {
+  position: relative;
+  overflow: hidden;
+  background: #e8fafe;
+}
+
+.trust-collage-image {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 35px rgba(18, 28, 71, 0.16));
+}
+
+.trust-collage-image-top-left {
+  width: 224px;
+  top: -18px;
+  left: 38px;
+}
+
+.trust-collage-image-middle-left {
+  width: 236px;
+  bottom: -8px;
+  left: 42px;
+}
+
+.trust-collage-image-right-main {
+  width: 216px;
+  top: 58px;
+  right: 96px;
+}
+
+.trust-collage-image-top-right {
+  width: 182px;
+  top: -6px;
+  right: 122px;
+}
+
+.trust-collage-image-bottom-right {
+  width: 178px;
+  right: 110px;
+  bottom: 18px;
+}
+
+@media (max-width: 1180px) {
+  .trust-shell {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .trust-copy-frame {
+    padding: 72px 40px 48px;
+  }
+
+  .trust-copy-frame h2,
+  .trust-points {
+    max-width: 100%;
+  }
+
+  .trust-visual-frame {
+    min-height: 760px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-copy-frame {
+    padding: 56px 20px 36px;
+  }
+
+  .trust-point {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 16px;
+    padding: 22px 0;
+  }
+
+  .trust-point-number {
+    font-size: 1.3rem;
+  }
+
+  .trust-point-copy h3 {
+    font-size: 1.35rem;
+  }
+
+  .trust-visual-frame {
+    min-height: 620px;
+  }
+
+  .trust-collage-image-top-left {
+    width: 154px;
+    top: 20px;
+    left: 10px;
+  }
+
+  .trust-collage-image-middle-left {
+    width: 170px;
+    left: 12px;
+    bottom: 84px;
+  }
+
+  .trust-collage-image-right-main {
+    width: 160px;
+    right: 14px;
+    top: 92px;
+  }
+
+  .trust-collage-image-top-right {
+    width: 136px;
+    right: 18px;
+    top: 14px;
+  }
+
+  .trust-collage-image-bottom-right {
+    width: 146px;
+    right: 18px;
+    bottom: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-copy-frame h2 {
+    font-size: 2.25rem;
+  }
+
+  .trust-point-copy h3 {
+    font-size: 1.18rem;
+  }
+
+  .trust-point-copy p {
+    font-size: 0.92rem;
+  }
+
+  .trust-visual-frame {
+    min-height: 540px;
+  }
+
+  .trust-collage-image-top-left {
+    width: 130px;
+  }
+
+  .trust-collage-image-middle-left {
+    width: 144px;
+    bottom: 88px;
+  }
+
+  .trust-collage-image-right-main {
+    width: 138px;
+  }
+
+  .trust-collage-image-top-right {
+    width: 116px;
+  }
+
+  .trust-collage-image-bottom-right {
+    width: 128px;
+  }
+}
+
+/* =========================
    FEATURES SHOWCASE SECTION
 ========================= */
 /* Light blue section that separates product education from testimonials below. */
