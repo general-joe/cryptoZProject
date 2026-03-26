@@ -98,18 +98,25 @@
               alt="Ethereum coin"
             />
 
+            <!-- The converter card is the main interactive widget in the hero section. -->
             <div class="converter-card">
+              <!-- The main heading tells the user what this card does. -->
               <h2>Currency Converter</h2>
 
+              <!-- First row: source currency selector on the left and amount field on the right. -->
               <div class="converter-group">
+                <!-- This label belongs to the amount input. -->
                 <label for="amount-value">Amount</label>
+                <!-- This row visually groups the source currency select with the numeric input. -->
                 <div class="converter-field converter-field-picker">
+                  <!-- The left side holds the source currency dropdown. -->
                   <div class="currency-select-wrap">
                     <select
                       id="from-currency"
                       aria-label="Select source currency"
                     ></select>
                   </div>
+                  <!-- The right side lets the user type how much of the source currency to convert. -->
                   <input
                     id="amount-value"
                     type="number"
@@ -121,15 +128,20 @@
                 </div>
               </div>
 
+              <!-- Second row: target currency selector on the left and converted value on the right. -->
               <div class="converter-group">
+                <!-- This label belongs to the converted output field. -->
                 <label for="converted-value">Converted to</label>
+                <!-- This row matches the structure of the first row for visual consistency. -->
                 <div class="converter-field converter-field-picker">
+                  <!-- The left side holds the target currency dropdown. -->
                   <div class="currency-select-wrap">
                     <select
                       id="to-currency"
                       aria-label="Select target currency"
                     ></select>
                   </div>
+                  <!-- The right side shows the conversion result and stays readonly. -->
                   <input
                     id="converted-value"
                     type="text"
@@ -139,9 +151,13 @@
                 </div>
               </div>
 
+              <!-- Third row: the design includes a date field with a calendar icon. -->
               <div class="converter-group">
+                <!-- This label belongs to the date input. -->
                 <label for="date-value">Date</label>
+                <!-- This row contains the date input and its trigger button. -->
                 <div class="converter-field converter-date">
+                  <!-- This button opens the browser's native date picker. -->
                   <button
                     class="date-picker-trigger"
                     id="date-picker-trigger"
@@ -150,7 +166,9 @@
                   >
                     &#128197;
                   </button>
+                  <!-- This input shows the current date value used in the UI. -->
                   <input id="date-value" type="date" />
+                  <!-- This refresh button remains in the markup even though it is visually hidden. -->
                   <button
                     class="converter-refresh"
                     id="refresh-rate"
@@ -162,6 +180,7 @@
                 </div>
               </div>
 
+              <!-- This bottom text row mirrors the exact small quick labels in the reference design. -->
               <div
                 class="converter-rates"
                 aria-label="Quick reference currencies"
@@ -177,6 +196,7 @@
                 >
               </div>
 
+              <!-- This live region is used by JavaScript to announce converter status updates. -->
               <p
                 class="converter-status-text"
                 id="converter-status-text"
@@ -184,6 +204,7 @@
               >
                 Preparing converter...
               </p>
+              <!-- This hidden helper note remains in the markup for setup guidance if needed later. -->
               <p class="converter-api-note">
                 Add your Abstract Exchange Rates API key to the
                 <code>abstract-api-key</code> meta tag in

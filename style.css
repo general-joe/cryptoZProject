@@ -370,12 +370,14 @@ body {
   box-shadow: 0 16px 30px rgba(12, 32, 101, 0.28);
 }
 
+/* The right side hero wrapper becomes the positioning context for the floating coins and converter card. */
 .hero-panel {
   position: relative;
   justify-self: end;
   overflow: visible;
 }
 
+/* The converter card itself uses a frosted translucent panel to match the reference artwork. */
 .converter-card {
   /* Glass-style panel created with transparency + blur. */
   position: relative;
@@ -390,6 +392,7 @@ body {
 }
 
 .converter-card h2 {
+  /* Large white title near the top of the card. */
   font-size: 2rem;
   letter-spacing: -0.03em;
   font-weight: 600;
@@ -397,11 +400,13 @@ body {
 }
 
 .converter-group {
+  /* Each field group stacks a label above one interactive row. */
   position: relative;
   margin-top: 22px;
 }
 
 .converter-group label {
+  /* Labels are small and bright so they remain readable on the blue glass panel. */
   display: block;
   margin-bottom: 10px;
   font-size: 1rem;
@@ -419,6 +424,7 @@ body {
 }
 
 .currency-select-wrap {
+  /* The narrow select area sits on the left side of the field, just like the design. */
   position: relative;
   width: 76px;
   margin-right: 14px;
@@ -427,6 +433,7 @@ body {
 }
 
 .currency-select-wrap::after {
+  /* Add a small dropdown arrow without depending on the browser default styling. */
   content: "\2304";
   position: absolute;
   top: 50%;
@@ -443,6 +450,7 @@ body {
 }
 
 .converter-field input {
+  /* Inputs inherit the clean white field style and keep the text subtle. */
   flex: 1;
   min-width: 0;
   border: none;
@@ -453,10 +461,12 @@ body {
 }
 
 .converter-field-picker input {
+  /* Converter row values align naturally from the left in this design. */
   text-align: left;
 }
 
 .currency-select-wrap select {
+  /* Native select is kept for the long browser-style option menu the user requested. */
   width: 100%;
   border: none;
   outline: none;
@@ -468,19 +478,23 @@ body {
 }
 
 #date-value {
+  /* Remove default browser appearance so the date field matches the other rows. */
   appearance: none;
   -webkit-appearance: none;
 }
 
 #date-value::-webkit-calendar-picker-indicator {
+  /* Hide the browser's default icon because the design uses our own trigger button. */
   opacity: 0;
 }
 
 .converter-date {
+  /* Keep the date input and icon spread across the row. */
   justify-content: space-between;
 }
 
 .date-picker-trigger {
+  /* The calendar icon is placed on the far right like the screenshot. */
   order: 2;
   margin-left: 10px;
 }
@@ -505,6 +519,7 @@ body {
 }
 
 .converter-rates {
+  /* Bottom quick labels intentionally stay simple and text-only. */
   display: flex;
   gap: 10px;
   margin-top: 16px;
@@ -514,6 +529,7 @@ body {
 }
 
 .converter-rate-option {
+  /* These labels look like static text first, with click support as a bonus. */
   cursor: default;
 }
 
@@ -544,6 +560,7 @@ body {
 }
 
 .hero-coin-top {
+  /* Top coin is kept subtle so only part of it peeks out from behind the converter card. */
   z-index: 0;
   width: 98px;
   height: 98px;
@@ -554,6 +571,7 @@ body {
 }
 
 .hero-coin-bottom {
+  /* Bottom coin anchors the lower-left corner and remains more visible than the top coin. */
   left: -74px;
   bottom: -72px;
 }
