@@ -2,72 +2,83 @@
 
 ## Chosen API
 
-This project uses the CoinGecko Simple Price API.
+This project now uses the Abstract Exchange Rates API.
 
 Official documentation:
 
-- https://docs.coingecko.com/v3.0.1/reference/simple-price
+- https://docs.abstractapi.com/exchange-rates/convert
 
 ## Why This API Was Chosen
 
-- it is widely used for cryptocurrency price data
-- it supports direct price lookup by coin ID
-- it can return values in multiple fiat currencies
-- it is simple enough for a frontend landing page demo
+- it supports fiat currency conversion with a simple REST endpoint
+- it accepts a historical `date` value for date-based conversion
+- it returns both the converted amount and the exchange rate used
+- it fits a lightweight frontend-only demo
 
 ## Endpoint Used
 
 ```text
-GET https://api.coingecko.com/api/v3/simple/price
+GET https://exchange-rates.abstractapi.com/v1/convert
 ```
 
 ## Query Parameters Used
 
-- `ids`: the cryptocurrency ID, for example `bitcoin`
-- `vs_currencies`: the target currency code, for example `usd`
-- `include_last_updated_at=true`: returns the timestamp of the latest update
+- `api_key`: your Abstract Exchange Rates API key
+- `base`: the source currency code, for example `USD`
+- `target`: the destination currency code, for example `EUR`
+- `base_amount`: the number the user entered
+- `date`: an optional historical date in `YYYY-MM-DD` format
 
 ## Example Request
 
 ```text
-https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_last_updated_at=true
+https://exchange-rates.abstractapi.com/v1/convert?api_key=YOUR_API_KEY&base=USD&target=EUR&base_amount=125&date=2026-03-20
 ```
 
 ## Example Response
 
 ```json
 {
-  "bitcoin": {
-    "usd": 67187.3358936566,
-    "last_updated_at": 1711356300
-  }
+  "base": "USD",
+  "target": "EUR",
+  "date": "2026-03-20",
+  "base_amount": 125,
+  "converted_amount": 115.420125,
+  "exchange_rate": 0.923361,
+  "last_updated": 1716297300
 }
 ```
 
 ## How It Works In This Project
 
-1. The user enters an amount.
-2. The user selects a source cryptocurrency.
-3. The user selects a target fiat currency.
-4. `script.js` sends a request to the CoinGecko API.
-5. The script multiplies the entered amount by the returned live rate.
-6. The converted result and latest update message are shown in the converter UI.
+1. The user clicks the left side of the `Amount` field to open a searchable list of world currencies.
+2. The user enters the source amount on the right side of the `Amount` field.
+3. The user clicks the left side of the `Converted to` field to choose the destination currency.
+4. The user can click the date control and choose a date for historical conversion.
+5. `script.js` sends a request to Abstract's `convert` endpoint.
+6. The converted value is rendered on the right side of the `Converted to` field.
 
 ## Files That Use The API
 
+- `index.html`
 - `script.js`
+
+## Configuration
+
+Add your key to the meta tag in `index.html`:
+
+```html
+<meta name="abstract-api-key" content="YOUR_ABSTRACT_API_KEY" />
+```
 
 ## Error Handling
 
 The implementation handles these cases:
 
+- missing API key
 - empty or invalid amount input
-- network failure
-- non-200 API response
-- missing rate data in the API response
+- unsupported or invalid API response
+- failed network request
+- historical date fetch problems
 
-When any of these issues happen, the UI shows a helpful status message instead of silently failing.
-
-## Important Note
-
-CoinGecko may apply rate limits or change access requirements over time. If public unauthenticated access becomes restricted, the project may need to be updated to use CoinGecko's demo or authenticated access pattern.
+When any of these issues happen, the UI shows a status message below the converter.

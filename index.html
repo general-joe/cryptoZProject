@@ -4,6 +4,7 @@
     <!-- Basic page metadata and the single stylesheet used by the landing page -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="abstract-api-key" content="d13ac5a84c304f0187b450f05a401128" />
     <title>CryptoZ Navbar</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -102,25 +103,19 @@
 
               <div class="converter-group">
                 <label for="amount-value">Amount</label>
-                <div class="converter-field">
-                  <div class="currency-chip">
-                    <img src="./assets/images/Frame 8764.png" alt="GBP flag" />
-                    <span id="from-currency-label">GBP</span>
-                    <select id="from-currency" aria-label="Select source currency">
-                      <option value="GBP" selected>GBP</option>
-                      <option value="USD">USD</option>
-                      <option value="EUR">EUR</option>
-                      <option value="AUD">AUD</option>
-                      <option value="CAD">CAD</option>
-                    </select>
-                    <span class="currency-arrow">&#709;</span>
+                <div class="converter-field converter-field-picker">
+                  <div class="currency-select-wrap">
+                    <select
+                      id="from-currency"
+                      aria-label="Select source currency"
+                    ></select>
                   </div>
                   <input
                     id="amount-value"
                     type="number"
                     min="0"
                     step="any"
-                    value="0.0088"
+                    value="1"
                     inputmode="decimal"
                   />
                 </div>
@@ -128,47 +123,71 @@
 
               <div class="converter-group">
                 <label for="converted-value">Converted to</label>
-                <div class="converter-field">
-                  <div class="currency-chip">
-                    <img src="./assets/images/Frame 8769.png" alt="AUD flag" />
-                    <span id="to-currency-label">AUD</span>
-                    <select id="to-currency" aria-label="Select target currency">
-                      <option value="AUD" selected>AUD</option>
-                      <option value="USD">USD</option>
-                      <option value="EUR">EUR</option>
-                      <option value="GBP">GBP</option>
-                      <option value="CAD">CAD</option>
-                    </select>
-                    <span class="currency-arrow">&#709;</span>
+                <div class="converter-field converter-field-picker">
+                  <div class="currency-select-wrap">
+                    <select
+                      id="to-currency"
+                      aria-label="Select target currency"
+                    ></select>
                   </div>
-                  <input id="converted-value" type="text" value="Loading..." readonly />
+                  <input
+                    id="converted-value"
+                    type="text"
+                    value="Loading..."
+                    readonly
+                  />
                 </div>
               </div>
 
               <div class="converter-group">
                 <label for="date-value">Date</label>
                 <div class="converter-field converter-date">
-                  <button class="date-nav" id="target-prev" type="button" aria-label="Select previous target currency">
-                    &#8249;
+                  <button
+                    class="date-picker-trigger"
+                    id="date-picker-trigger"
+                    type="button"
+                    aria-label="Choose conversion date"
+                  >
+                    &#128197;
                   </button>
-                  <input id="date-value" type="text" value="Loading..." readonly />
-                  <button class="date-nav" id="target-next" type="button" aria-label="Select next target currency">
-                    &#8250;
-                  </button>
-                  <button class="converter-refresh" id="refresh-rate" type="button" aria-label="Refresh exchange rate">
+                  <input id="date-value" type="date" />
+                  <button
+                    class="converter-refresh"
+                    id="refresh-rate"
+                    type="button"
+                    aria-label="Refresh exchange rate"
+                  >
                     &#8635;
                   </button>
                 </div>
               </div>
 
-              <div class="converter-rates" aria-label="Quick reference currencies">
-                <span class="converter-rate-option" data-currency="EUR">EUR</span>
-                <span class="converter-rate-option" data-currency="GBP">GBP</span>
-                <span class="converter-rate-option" data-currency="AUD">AUD</span>
+              <div
+                class="converter-rates"
+                aria-label="Quick reference currencies"
+              >
+                <span class="converter-rate-option" data-currency="EUR"
+                  >EUR</span
+                >
+                <span class="converter-rate-option" data-currency="GBP"
+                  >GBP</span
+                >
+                <span class="converter-rate-option" data-currency="AUD"
+                  >AUD</span
+                >
               </div>
 
-              <p class="converter-status-text" id="converter-status-text" aria-live="polite">
+              <p
+                class="converter-status-text"
+                id="converter-status-text"
+                aria-live="polite"
+              >
                 Preparing converter...
+              </p>
+              <p class="converter-api-note">
+                Add your Abstract Exchange Rates API key to the
+                <code>abstract-api-key</code> meta tag in
+                <code>index.html</code>.
               </p>
             </div>
           </article>
@@ -188,7 +207,11 @@
           </div>
 
           <!-- Stats card uses three equal columns separated by thin vertical dividers -->
-          <div class="brand-proof-stats" role="group" aria-labelledby="brand-proof-title">
+          <div
+            class="brand-proof-stats"
+            role="group"
+            aria-labelledby="brand-proof-title"
+          >
             <article class="brand-proof-stat">
               <h2 id="brand-proof-title">99K</h2>
               <p>People have joined</p>
@@ -211,7 +234,9 @@
       <section class="trust-section" aria-labelledby="trust-section-title">
         <div class="trust-shell">
           <div class="trust-copy-frame">
-            <h2 id="trust-section-title">The Most Trusted Cryptocurrency Platform</h2>
+            <h2 id="trust-section-title">
+              The Most Trusted Cryptocurrency Platform
+            </h2>
 
             <div class="trust-points">
               <article class="trust-point">
@@ -219,8 +244,9 @@
                 <div class="trust-point-copy">
                   <h3>Syn between platforms</h3>
                   <p>
-                    No matter if you're using our web interface or mobile app, your
-                    data is always synced. Just one account for all our services.
+                    No matter if you're using our web interface or mobile app,
+                    your data is always synced. Just one account for all our
+                    services.
                   </p>
                 </div>
               </article>
@@ -276,11 +302,16 @@
       </section>
 
       <!-- Product feature showcase inserted above the testimonials section -->
-      <section class="features-showcase-section" aria-labelledby="features-showcase-title">
+      <section
+        class="features-showcase-section"
+        aria-labelledby="features-showcase-title"
+      >
         <div class="features-showcase-shell">
           <!-- Top grid: one tall feature card on the left, two stacked cards on the right -->
           <div class="feature-highlight-grid">
-            <article class="feature-highlight-card feature-highlight-card-primary">
+            <article
+              class="feature-highlight-card feature-highlight-card-primary"
+            >
               <div class="feature-visual feature-visual-primary">
                 <!-- Each top card uses a phone screenshot plus an overlapping modal/card image -->
                 <img
@@ -298,14 +329,16 @@
               <div class="feature-highlight-copy">
                 <h2>Create portfolio today</h2>
                 <p>
-                  Buy and sell popular digital currencies, keep track of them in one
-                  place, and explore a variety of features that make trading feel
-                  simple from day one.
+                  Buy and sell popular digital currencies, keep track of them in
+                  one place, and explore a variety of features that make trading
+                  feel simple from day one.
                 </p>
               </div>
             </article>
 
-            <article class="feature-highlight-card feature-highlight-card-trading">
+            <article
+              class="feature-highlight-card feature-highlight-card-trading"
+            >
               <div class="feature-visual feature-visual-secondary">
                 <img
                   src="./assets/images/iphone-12--black@2x.png"
@@ -322,13 +355,16 @@
               <div class="feature-highlight-copy">
                 <h2>Lightning-Fast Crypto Trading</h2>
                 <p>
-                  The exchange supports USD, EUR, and GBP. Invest in cryptocurrency
-                  easily over time by scheduling buys daily, weekly, or monthly.
+                  The exchange supports USD, EUR, and GBP. Invest in
+                  cryptocurrency easily over time by scheduling buys daily,
+                  weekly, or monthly.
                 </p>
               </div>
             </article>
 
-            <article class="feature-highlight-card feature-highlight-card-security">
+            <article
+              class="feature-highlight-card feature-highlight-card-security"
+            >
               <div class="feature-visual feature-visual-secondary">
                 <img
                   src="./assets/images/iphone-12--black.png"
@@ -345,8 +381,9 @@
               <div class="feature-highlight-copy">
                 <h2>Security From Day One</h2>
                 <p>
-                  Safely search and compare, buy and sell popular digital currencies,
-                  and track them all in one place with a more secure setup.
+                  Safely search and compare, buy and sell popular digital
+                  currencies, and track them all in one place with a more secure
+                  setup.
                 </p>
               </div>
             </article>
@@ -356,7 +393,8 @@
           <div class="features-steps-intro">
             <h2 id="features-showcase-title">Get Started in Just Few Minute</h2>
             <p>
-              Has a variety of features that make it the best place to start trading
+              Has a variety of features that make it the best place to start
+              trading
             </p>
           </div>
 
@@ -370,8 +408,8 @@
               />
               <h3>Sign Up</h3>
               <p>
-                Buy Bitcoin or Ethereum, then securely store it in your wallet or
-                send it on easily to friends.
+                Buy Bitcoin or Ethereum, then securely store it in your wallet
+                or send it on easily to friends.
               </p>
             </article>
 
@@ -383,8 +421,8 @@
               />
               <h3>Fund</h3>
               <p>
-                Choose your preferred payment method such as bank transfer or credit
-                card to top up your wallet.
+                Choose your preferred payment method such as bank transfer or
+                credit card to top up your wallet.
               </p>
             </article>
 
@@ -396,8 +434,8 @@
               />
               <h3>Buy Crypto</h3>
               <p>
-                Sign up for free wallet on web, iOS or Android and follow our easy
-                process to set up your profile.
+                Sign up for free wallet on web, iOS or Android and follow our
+                easy process to set up your profile.
               </p>
             </article>
           </div>
@@ -405,7 +443,10 @@
       </section>
 
       <!-- TESTIMONIALS SECTION -->
-      <section class="testimonials-section" aria-labelledby="testimonials-title">
+      <section
+        class="testimonials-section"
+        aria-labelledby="testimonials-title"
+      >
         <!-- Decorative curved lines that sit behind the content -->
         <div class="testimonials-pattern" aria-hidden="true">
           <span class="pattern-curve pattern-curve-one"></span>
@@ -449,7 +490,8 @@
                 </div>
                 <p class="testimonial-copy">
                   “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.”
                 </p>
               </article>
 
@@ -715,7 +757,10 @@
           <p>Did you know you can do more with crypto while on the go?</p>
 
           <div class="footer-brand">
-            <img src="./assets/vuesax/bold/nexo-(nexo).png" alt="CryptoZ logo" />
+            <img
+              src="./assets/vuesax/bold/nexo-(nexo).png"
+              alt="CryptoZ logo"
+            />
             <span>CryptoZ</span>
           </div>
 
